@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/notes_app_bar.dart';
-import 'package:notes_app/widgets/notes_list_view.dart';
+import 'package:notes_app/widgets/notes_app_body.dart';
+
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -8,23 +8,11 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add , color: Colors.white,),
+      ),
       body: NotesAppBody(),
     );
   }
 }
-class NotesAppBody extends StatelessWidget {
-  const NotesAppBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        NotesAppBar(),
-        SizedBox(height: 20,),
-        NotesListView(),
-        
-      ],
-    );
-}
-}
-
